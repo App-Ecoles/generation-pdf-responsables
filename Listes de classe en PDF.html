@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Listes de classe en PDF</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1d2330;--mut:#5b6475;--bd:#d5d9e2;--ac:#1f4e9c;--acx:#fff;--ok:#1b7a3d;--warn:#a85d00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171d;--card:#1d222b;--tx:#e8ebf1;--mut:#a0a8b8;--bd:#363d4a;--ac:#6ea0f0;--acx:#0e1626;--ok:#5fcf86;--warn:#f0a94d}}
+:root[data-theme="dark"]{--bg:#14171d;--card:#1d222b;--tx:#e8ebf1;--mut:#a0a8b8;--bd:#363d4a;--ac:#6ea0f0;--acx:#0e1626;--ok:#5fcf86;--warn:#f0a94d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.05rem;margin:0 0 8px}
+.sub{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:16px}
+.priv{border-left:4px solid var(--ok)}
+ol{margin:6px 0 0;padding-left:22px}li{margin:2px 0}
+code{background:var(--bg);border:1px solid var(--bd);border-radius:4px;padding:0 5px;font-size:.9em}
+.note{color:var(--mut);font-size:.9rem;margin:8px 0 0}
+label{display:block;font-size:.9rem;color:var(--mut);margin:10px 0 3px}
+input[type=text],select{width:100%;box-sizing:border-box;padding:9px 10px;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:6px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0 12px}
+details{margin-top:8px}summary{cursor:pointer;color:var(--ac)}
+button{font:inherit;cursor:pointer;border:0;border-radius:6px;padding:9px 14px;background:var(--ac);color:var(--acx);font-weight:600}
+button.sec{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.drop{border:2px dashed var(--bd);border-radius:10px;padding:22px;text-align:center;color:var(--mut)}
+.drop.over{border-color:var(--ac);background:var(--bg)}
+.msg{margin:10px 0 0;font-size:.92rem}.msg.warn{color:var(--warn)}.msg.ok{color:var(--ok)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;margin-top:8px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--bd);font-size:.95rem}
+td.r,th.r{text-align:right}
+</style>
+</head>
+<body>
+<main>
+<h1>Listes de classe en PDF</h1>
+<p class="sub">Un PDF par classe, généré à partir de l'extraction CSV de la base élèves.</p>
+
+<div class="card priv">
+<h2>Confidentialité</h2>
+<p style="margin:0">Le fichier est lu et transformé <strong>uniquement dans ce navigateur</strong>. Aucune donnée n'est envoyée, enregistrée ou conservée : fermer l'onglet efface tout. Les PDF sont téléchargés sur cet ordinateur.</p>
+</div>
+
+<div class="card">
+<h2>1. Consigne d'extraction</h2>
+<p style="margin:0">Dans la base élèves, extraire au format <strong>CSV</strong> une ligne par couple élève / responsable légal, avec les données suivantes, dans cet ordre :</p>
+<div class="tw"><table>
+<thead><tr><th class="r">N°</th><th>Thème</th><th>Donnée à extraire</th></tr></thead>
+<tbody>
+<tr><td class="r">1</td><td>École</td><td>Nom de l'école</td></tr>
+<tr><td class="r">2</td><td>École</td><td>Téléphone</td></tr>
+<tr><td class="r">3</td><td>École</td><td>Courriel</td></tr>
+<tr><td class="r">4</td><td>École</td><td>Commune</td></tr>
+<tr><td class="r">5</td><td>Scolarité</td><td>Classe</td></tr>
+<tr><td class="r">6</td><td>Scolarité</td><td>Niveau</td></tr>
+<tr><td class="r">7</td><td>Élève</td><td>Nom de famille</td></tr>
+<tr><td class="r">8</td><td>Élève</td><td>Prénom</td></tr>
+<tr><td class="r">9</td><td>Élève</td><td>Sexe</td></tr>
+<tr><td class="r">10</td><td>Élève</td><td>Date de naissance</td></tr>
+<tr><td class="r">11</td><td>Responsable</td><td>Civilité</td></tr>
+<tr><td class="r">12</td><td>Responsable</td><td>Nom de famille</td></tr>
+<tr><td class="r">13</td><td>Responsable</td><td>Prénom</td></tr>
+<tr><td class="r">14</td><td>Responsable</td><td>Lien de parenté</td></tr>
+<tr><td class="r">15</td><td>Responsable</td><td>Téléphone portable</td></tr>
+<tr><td class="r">16</td><td>Responsable</td><td>Courriel</td></tr>
+<tr><td class="r">17</td><td>Adresse (responsable)</td><td>Complément</td></tr>
+<tr><td class="r">18</td><td>Adresse (responsable)</td><td>Numéro et voie</td></tr>
+<tr><td class="r">19</td><td>Adresse (responsable)</td><td>Code postal</td></tr>
+<tr><td class="r">20</td><td>Adresse (responsable)</td><td>Commune</td></tr>
+</tbody></table></div>
+<p class="note">Les informations de l'école (lignes 1 à 4) sont reprises automatiquement dans l'en-tête de chaque PDF. La première ligne du fichier doit contenir les intitulés des colonnes, tels qu'ils sortent de la base.</p>
+</div>
+
+<div class="card">
+<h2>2. Options</h2>
+<label for="ori">Orientation de la page</label>
+<select id="ori"><option value="p">Portrait</option><option value="l">Paysage</option></select>
+<div id="manual" hidden>
+<p class="note">Informations de l'école absentes du CSV : à compléter pour l'en-tête des PDF.</p>
+<label for="ecole">Nom de l'école</label>
+<input type="text" id="ecole" autocomplete="off">
+<div class="row">
+<div><label for="tel">Téléphone</label><input type="text" id="tel" autocomplete="off"></div>
+<div><label for="mel">Courriel</label><input type="text" id="mel" autocomplete="off"></div>
+</div></div>
+</div>
+
+<div class="card">
+<h2>3. Fichier CSV</h2>
+<div class="drop" id="drop">
+<p style="margin:0 0 10px">Glisser le fichier ici ou</p>
+<button type="button" id="pick">Choisir le fichier CSV</button>
+<input type="file" id="file" accept=".csv,text/csv,.txt" hidden>
+</div>
+<div id="msg" class="msg" role="status"></div>
+</div>
+
+<div class="card" id="res" hidden>
+<h2>4. Classes détectées</h2>
+<div class="tw"><table>
+<thead><tr><th>Classe / enseignant</th><th>Niveau(x)</th><th class="r">Élèves</th><th></th></tr></thead>
+<tbody id="tb"></tbody></table></div>
+<p style="margin:14px 0 0"><button type="button" id="all">Télécharger tous les PDF</button></p>
+<p class="note">Si le navigateur demande l'autorisation de télécharger plusieurs fichiers, accepter.</p>
+</div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var classes=[],school={nom:'',tel:'',mel:'',com:''};
+
+function norm(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim()}
+
+function parseCSV(t){
+  var first=t.split(/\r?\n/)[0]||'';
+  var cnt=function(c){return first.split(c).length-1};
+  var d=[';',',','\t'].sort(function(a,b){return cnt(b)-cnt(a)})[0];
+  var rows=[],row=[],f='',q=false,i,c;
+  for(i=0;i<t.length;i++){
+    c=t[i];
+    if(q){
+      if(c==='"'){ if(t[i+1]==='"'){f+='"';i++}else q=false } else f+=c;
+    } else if(c==='"') q=true;
+    else if(c===d){row.push(f);f=''}
+    else if(c==='\n'){row.push(f);rows.push(row);row=[];f=''}
+    else if(c!=='\r') f+=c;
+  }
+  if(f!==''||row.length){row.push(f);rows.push(row)}
+  return rows.filter(function(r){return r.some(function(x){return x.trim()!==''})});
+}
+
+function decode(buf){
+  var t=new TextDecoder('utf-8').decode(buf);
+  if(t.indexOf('\uFFFD')>=0) t=new TextDecoder('windows-1252').decode(buf);
+  return t.replace(/^\uFEFF/,'');
+}
+
+function fmtDate(s){
+  s=(s||'').trim();
+  var m=s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m? m[3]+'/'+m[2]+'/'+m[1] : s;
+}
+
+function build(rows){
+  var h=rows[0].map(norm),ix={phones:[],mails:[],addr:[]};
+  h.forEach(function(n,i){
+    if(n.indexOf('officielle')>=0||n==='nom ecole')ix.enom=i;
+    else if(n==='telephone')ix.etel=i;
+    else if(n==='mail'||n==='courriel')ix.emel=i;
+    else if(n==='commune')ix.ecom=i;
+    else if(n==='libelle'||n==='classe')ix.cls=i;
+    else if(n==='niveau')ix.niv=i;
+    else if(n==='nom')ix.nom=i;
+    else if(n==='prenom')ix.pre=i;
+    else if(n==='sexe')ix.sexe=i;
+    else if(n.indexOf('date de naissance')===0)ix.dn=i;
+    else if(n==='civilite')ix.civ=i;
+    else if(n==='nom du responsable')ix.rnom=i;
+    else if(n==='prenom du responsable')ix.rpre=i;
+    else if(n.indexOf('lien')===0)ix.lien=i;
+    else if(n.indexOf('telephone')===0)ix.phones.push(i);
+    else if(n.indexOf('mail')>=0||n.indexOf('courriel')>=0)ix.mails.push(i);
+    else if(/^ligne \d/.test(n))ix.addr.push(i);
+    else if(n==='code postal')ix.cp=i;
+    else if(n.indexOf('commune')===0)ix.com=i;
+  });
+  var miss=['cls','nom','pre'].filter(function(k){return ix[k]===undefined});
+  if(miss.length) return {err:'Colonnes obligatoires introuvables : '+miss.map(function(k){return {cls:'Libellé',nom:'Nom',pre:'Prénom'}[k]}).join(', ')+'. Vérifier la première ligne du fichier.'};
+  var g=function(r,i){return i===undefined?'':(r[i]||'').trim()};
+  var sch={nom:'',tel:'',mel:'',com:''};
+  rows.slice(1).forEach(function(r){
+    if(!sch.nom)sch.nom=g(r,ix.enom).replace(/\s+/g,' ');
+    if(!sch.tel)sch.tel=g(r,ix.etel);
+    if(!sch.mel)sch.mel=g(r,ix.emel);
+    if(!sch.com)sch.com=g(r,ix.ecom);
+  });
+  var map={},order=[],cur={};
+  rows.slice(1).forEach(function(r){
+    var lib=g(r,ix.cls); if(!lib) lib='(sans classe)';
+    var nom=g(r,ix.nom),pre=g(r,ix.pre),dn=fmtDate(g(r,ix.dn)),c=map[lib];
+    if(!c){c=map[lib]={lib:lib,kids:[],nivs:[]};order.push(lib)}
+    var kid,key=nom+'|'+pre+'|'+dn;
+    if(nom||pre){
+      kid=c.kids.filter(function(k){return k.key===key})[0];
+    } else {
+      kid=cur[lib]; if(kid&&kid.resps.length>=2) kid=null;
+    }
+    if(!kid){
+      kid={key:key,nom:nom,pre:pre,dn:dn,sexe:g(r,ix.sexe),niv:g(r,ix.niv),resps:[]};
+      c.kids.push(kid); if(!nom&&!pre)cur[lib]=kid;
+    }
+    var adr=ix.addr.map(function(i){return g(r,i)}).filter(Boolean).reverse().join(', ');
+    var ville=[g(r,ix.cp),g(r,ix.com)].filter(Boolean).join(' ');
+    var lines=[];
+    var id=[g(r,ix.rnom),g(r,ix.rpre)].filter(Boolean).join(' ');
+    var lien=g(r,ix.lien);
+    if(id||lien) lines.push((id+(lien?' ('+lien+')':'')).trim());
+    if(adr)lines.push(adr);
+    if(ville)lines.push(ville);
+    var tels=ix.phones.map(function(i){return g(r,i)}).filter(Boolean);
+    if(tels.length)lines.push('Tél. : '+tels.join(' / '));
+    ix.mails.map(function(i){return g(r,i)}).filter(Boolean).forEach(function(m){lines.push(m)});
+    if(lines.length)kid.resps.push(lines.join('\n'));
+  });
+  var out=order.map(function(l){
+    var c=map[l];
+    c.kids.sort(function(a,b){return (a.nom+' '+a.pre).localeCompare(b.nom+' '+b.pre,'fr',{sensitivity:'base'})});
+    c.kids.forEach(function(k){if(k.niv&&c.nivs.indexOf(k.niv)<0)c.nivs.push(k.niv)});
+    return c;
+  });
+  return {classes:out,school:sch,noAddr:!ix.addr.length&&ix.cp===undefined,noTel:!ix.phones.length};
+}
+
+function makePDF(c){
+  var J=window.jspdf.jsPDF,land=$('ori').value==='l';
+  var doc=new J({orientation:land?'landscape':'portrait',unit:'mm',format:'a4'});
+  var W=doc.internal.pageSize.getWidth(),Hh=doc.internal.pageSize.getHeight(),M=10,y=14;
+  var ecole=school.nom||$('ecole').value.trim(),tel=school.tel||$('tel').value.trim(),mel=school.mel||$('mel').value.trim(),com=school.com;
+  doc.setFont('helvetica','normal');doc.setFontSize(10);
+  if(ecole){doc.text(ecole,M,y);y+=6}
+  if(com){doc.text('Commune : '+com,M,y);y+=5}
+  if(tel){doc.text('Tél. : '+tel,M,y);y+=5}
+  if(mel){doc.text('Courriel : '+mel,M,y);y+=5}
+  y+=6;
+  doc.setFont('helvetica','bold');doc.setFontSize(13);
+  doc.text('Liste des élèves de la classe de '+(c.nivs.join(' / ')||c.lib),W/2,y,{align:'center'});y+=9;
+  doc.setFontSize(11);
+  doc.text('Enseignant(s) : '+c.lib,W/2,y,{align:'center'});y+=7;
+  var uw=W-2*M,fixed=[10,34,30,22,12,14],rest=uw-fixed.reduce(function(a,b){return a+b},0);
+  var body=c.kids.map(function(k,i){return [String(i+1),k.nom,k.pre,k.dn,k.sexe,k.niv,k.resps.join('\n\n')]});
+  doc.autoTable({
+    startY:y,margin:{left:M,right:M,top:12,bottom:16},theme:'grid',rowPageBreak:'avoid',
+    head:[['N°','Nom','Prénom','Né(e) le','Sexe','Niveau','Responsables']],body:body,
+    styles:{font:'helvetica',fontSize:9,cellPadding:1.8,valign:'top',lineColor:[0,0,0],lineWidth:0.2,textColor:[0,0,0],minCellHeight:14},
+    headStyles:{fillColor:[255,255,255],textColor:[0,0,0],fontStyle:'bolditalic',halign:'center',minCellHeight:7},
+    columnStyles:{0:{cellWidth:fixed[0],halign:'right'},1:{cellWidth:fixed[1]},2:{cellWidth:fixed[2]},3:{cellWidth:fixed[3]},4:{cellWidth:fixed[4],halign:'center'},5:{cellWidth:fixed[5],halign:'center'},6:{cellWidth:rest}}
+  });
+  var n=doc.getNumberOfPages(),d=new Date().toLocaleDateString('fr-FR');
+  for(var p=1;p<=n;p++){
+    doc.setPage(p);doc.setFont('helvetica','normal');doc.setFontSize(9);
+    doc.text('Mise à jour en date du '+d,M,Hh-8);
+    doc.text('Page '+p+' / '+n,W-M,Hh-8,{align:'right'});
+    if(p===n){doc.setFont('helvetica','bold');doc.text('Nombre d\'élèves : '+c.kids.length,W/2,Hh-8,{align:'center'})}
+  }
+  var name=('Liste_'+c.lib).replace(/[^\w\-.]+/g,'_').replace(/_+/g,'_').replace(/^_|_$/g,'');
+  doc.save(name+'.pdf');
+}
+
+function msg(t,cls){var m=$('msg');m.textContent=t;m.className='msg '+(cls||'')}
+
+function render(){
+  var tb=$('tb');tb.textContent='';
+  classes.forEach(function(c){
+    var tr=document.createElement('tr'),cells=[c.lib,c.nivs.join(' / '),String(c.kids.length)];
+    cells.forEach(function(t,i){var td=document.createElement('td');if(i===2)td.className='r';td.textContent=t;tr.appendChild(td)});
+    var td=document.createElement('td');td.className='r';
+    var b=document.createElement('button');b.type='button';b.className='sec';b.textContent='PDF';
+    b.onclick=function(){makePDF(c)};td.appendChild(b);tr.appendChild(td);tb.appendChild(tr);
+  });
+  $('res').hidden=false;
+}
+
+function handle(file){
+  if(!file)return;
+  $('res').hidden=true;msg('Lecture du fichier…');
+  var r=new FileReader();
+  r.onerror=function(){msg('Impossible de lire ce fichier.','warn')};
+  r.onload=function(){
+    try{
+      var rows=parseCSV(decode(r.result));
+      if(rows.length<2){msg('Le fichier ne contient aucune ligne de données.','warn');return}
+      var res=build(rows);
+      if(res.err){msg(res.err,'warn');return}
+      classes=res.classes;school=res.school;
+      $('manual').hidden=!!school.nom;
+      var nb=classes.reduce(function(a,c){return a+c.kids.length},0),w=[];
+      if(res.noAddr)w.push('aucune colonne d\'adresse trouvée');
+      if(res.noTel)w.push('aucune colonne de téléphone trouvée');
+      msg(nb+' élèves répartis dans '+classes.length+' classe(s).'+(w.length?' Attention : '+w.join(' ; ')+'.':''),w.length?'warn':'ok');
+      render();
+    }catch(e){msg('Erreur lors de la lecture : '+e.message,'warn')}
+  };
+  r.readAsArrayBuffer(file);
+}
+
+$('pick').onclick=function(){$('file').click()};
+$('file').onchange=function(e){handle(e.target.files[0]);e.target.value=''};
+var dz=$('drop');
+['dragenter','dragover'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();dz.classList.add('over')})});
+['dragleave','drop'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();dz.classList.remove('over')})});
+dz.addEventListener('drop',function(e){handle(e.dataTransfer.files[0])});
+$('all').onclick=function(){
+  classes.forEach(function(c,i){setTimeout(function(){makePDF(c)},i*600)});
+};
+})();
+</script>
+</body>
+</html>
